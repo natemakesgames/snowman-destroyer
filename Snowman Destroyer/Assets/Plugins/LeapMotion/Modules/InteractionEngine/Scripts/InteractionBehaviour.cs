@@ -864,6 +864,10 @@ namespace Leap.Unity.Interaction {
     private float _closestHoveringControllerDistance = float.PositiveInfinity;
     private InteractionHand _closestHoveringHand = null;
 
+
+    [SerializeField]
+    private bool useBoundsForMeshColliders;
+
     /// <summary>
     /// Returns a comparative distance to this interaction object. Calculated by finding
     /// the smallest distance to each of the object's colliders.
@@ -890,11 +894,18 @@ namespace Leap.Unity.Interaction {
         if (collider is MeshCollider) {
           // Native, faster ClosestPoint, but no support for off-center colliders; use to
           // support MeshColliders.
+          if(!useBoundsForMeshColliders)
+                    {
           testDistance = (Physics.ClosestPoint(worldPosition,
                                                collider,
                                                collider.attachedRigidbody.position,
                                                collider.attachedRigidbody.rotation)
                           - worldPosition).magnitude;
+           }
+          else{
+          //testDistance = Vector3.Distance(worldPosition, collider.bounds.center) - hoverDistanceOverride;
+          testDistance = Vector3.Distance(worldPosition, collider.bounds.ClosestPoint(worldPosition));
+          }
         }
         // Custom, slower ClosestPoint
         else {

@@ -233,6 +233,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
   _controlEnabled: 1
@@ -386,7 +387,7 @@ Transform:
   - {fileID: 1519981567}
   - {fileID: 1415428481}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &125855767
 GameObject:
@@ -499,7 +500,7 @@ Transform:
   - {fileID: 1648222931}
   - {fileID: 1199311420}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &146351790
 GameObject:
@@ -842,6 +843,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
   _controlEnabled: 1
@@ -1031,6 +1033,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
   _controlEnabled: 1
@@ -1199,7 +1202,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1135166102121244, guid: 40e809833d307ef4983e1e71fe56e23b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4829828358790816, guid: 40e809833d307ef4983e1e71fe56e23b, type: 3}
       propertyPath: m_RootOrder
@@ -1584,6 +1587,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!54 &515511289
@@ -1784,6 +1788,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!54 &556236287
@@ -1888,7 +1893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f10fa40360571247a7ca806d6859557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _manager: {fileID: 0}
+  _manager: {fileID: 1240934850}
   _ignoreHoverMode: 0
   _isIgnoringAllHoverState: 0
   _ignorePrimaryHover: 0
@@ -1904,6 +1909,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 1
   _eventTable:
     _entries: []
 --- !u!54 &558210431
@@ -2118,6 +2124,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!54 &590891616
@@ -2304,7 +2311,7 @@ Transform:
   - {fileID: 445642425}
   - {fileID: 5713752766986203755}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &716116698
 GameObject:
@@ -2347,7 +2354,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1180994678239160, guid: 9361ab6d13ee87644bc370bccb524144, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4911511504652324, guid: 9361ab6d13ee87644bc370bccb524144, type: 3}
       propertyPath: m_RootOrder
@@ -2666,6 +2673,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!54 &866583884
@@ -2968,7 +2976,7 @@ Transform:
   - {fileID: 866583887}
   - {fileID: 2097689033}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &915654975
 GameObject:
@@ -3595,6 +3603,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
   _controlEnabled: 1
@@ -3991,6 +4000,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!54 &1188200654
@@ -5375,7 +5385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f10fa40360571247a7ca806d6859557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _manager: {fileID: 0}
+  _manager: {fileID: 1240934850}
   _ignoreHoverMode: 0
   _isIgnoringAllHoverState: 0
   _ignorePrimaryHover: 0
@@ -5391,6 +5401,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!54 &1231408932
@@ -5475,6 +5486,8 @@ MonoBehaviour:
     _values:
     - {fileID: 933748168}
     - {fileID: 1221643883}
+    - {fileID: 451255640}
+    - {fileID: 787131977}
   hoverActivationRadius: 0.2
   touchActivationRadius: 0.075
   multiGraspHoldingMode: 0
@@ -5842,6 +5855,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!54 &1431463619
@@ -6035,6 +6049,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
   _controlEnabled: 1
@@ -6209,6 +6224,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!54 &1519981563
@@ -6581,6 +6597,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
   _controlEnabled: 1
@@ -6662,7 +6679,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 64
   m_IsActive: 1
 --- !u!114 &1611397641
 MonoBehaviour:
@@ -6692,6 +6709,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 1
   _eventTable:
     _entries: []
 --- !u!54 &1611397642
@@ -6709,7 +6727,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!64 &1611397643
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6722,7 +6740,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 30
+  m_CookingOptions: -1
   m_Mesh: {fileID: 4300000, guid: e8bfb05082707794980b3ca4e1fa7fd6, type: 3}
 --- !u!4 &1611425320
 Transform:
@@ -7008,6 +7026,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!135 &1648222928
@@ -7149,6 +7168,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!54 &1718798591
@@ -7235,13 +7255,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718798588}
-  m_LocalRotation: {x: -0.18438424, y: -0.1576471, z: -0.8283525, w: 0.5049574}
-  m_LocalPosition: {x: -0.33099866, y: 0.9477156, z: 0.7833}
+  m_LocalRotation: {x: -0.26533717, y: -0.29243892, z: -0.79088575, w: 0.4675205}
+  m_LocalPosition: {x: -0.33099866, y: 0.9477156, z: 0.7771}
   m_LocalScale: {x: 0.0768801, y: 0.03696731, z: 0.012034421}
   m_Children: []
   m_Father: {fileID: 911399617}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -26.576002, y: 9.412001, z: -119.495}
+  m_LocalEulerAnglesHint: {x: -45.29, y: 11.999001, z: -123.843}
 --- !u!114 &1718798597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7749,6 +7769,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!54 &1863919700
@@ -8026,8 +8047,8 @@ Transform:
   m_LocalPosition: {x: -1.101, y: 0.8, z: 0.30739096}
   m_LocalScale: {x: 0.07644714, y: 0.07644714, z: 0.07644714}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1928452066}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1918108871
 MonoBehaviour:
@@ -8057,6 +8078,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!54 &1918108872
@@ -8101,9 +8123,12 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4299111535976705}
+  - {fileID: 1918108870}
+  - {fileID: 4299110229934052}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1930417850
 GameObject:
@@ -8184,6 +8209,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!54 &1930417854
@@ -9481,6 +9507,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!54 &2047549462
@@ -9771,6 +9798,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!54 &2097689030
@@ -9924,8 +9952,8 @@ Transform:
   m_LocalPosition: {x: -0.904, y: 0.69, z: 0.30739096}
   m_LocalScale: {x: 0.09581466, y: 0.18305913, z: 0.5583303}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1928452066}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4299111535976705
 Transform:
@@ -9938,8 +9966,8 @@ Transform:
   m_LocalPosition: {x: -1.101, y: 0.69, z: 0.30739096}
   m_LocalScale: {x: 0.13303715, y: 0.13303715, z: 0.13303715}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1928452066}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4299111584199418
 Transform:
@@ -10211,6 +10239,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!114 &114726309985455330
@@ -10241,6 +10270,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!114 &114726311340704252
@@ -10271,6 +10301,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 0
   _eventTable:
     _entries: []
 --- !u!4 &3755343279643190188
@@ -10337,8 +10368,8 @@ GameObject:
   - component: {fileID: 5713752766986203755}
   - component: {fileID: 5713752766987006539}
   - component: {fileID: 5713752766988103819}
-  - component: {fileID: 5713752766985907790}
   - component: {fileID: 5713752766985907789}
+  - component: {fileID: 5713752766985907790}
   - component: {fileID: 5713752766985907788}
   m_Layer: 0
   m_Name: Straight Ramp
@@ -10359,7 +10390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f10fa40360571247a7ca806d6859557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _manager: {fileID: 0}
+  _manager: {fileID: 1240934850}
   _ignoreHoverMode: 0
   _isIgnoringAllHoverState: 0
   _ignorePrimaryHover: 0
@@ -10375,6 +10406,7 @@ MonoBehaviour:
   _overrideNoContactLayer: 0
   _noContactLayer:
     layerIndex: 0
+  useBoundsForMeshColliders: 1
   _eventTable:
     _entries: []
 --- !u!54 &5713752766985907789
