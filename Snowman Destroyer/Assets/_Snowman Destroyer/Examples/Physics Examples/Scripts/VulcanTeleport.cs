@@ -25,20 +25,26 @@ public class VulcanTeleport : MonoBehaviour
     private float waitBeforeOrbSpawn;
 
     [SerializeField]
-    private float orbEnteranceDur;
+    private float orbEntranceDur;
     [SerializeField]
     private float orbExitDur;
+    [SerializeField]
+    private float orbTravelDur;
     [SerializeField]
     private Ease orbScaleEase;
 
     [SerializeField]
-    private float circleEnteranceDelay;
+    private float circleEntranceDelay;
+    [SerializeField]
+    private float lightEntranceDelay;
     [SerializeField]
     private float circleEnteranceDur;
     [SerializeField]
     private float circleExitDur;
     [SerializeField]
     private Ease circleScaleEase;
+    [SerializeField]
+    private Ease orbTravelEase;
 
     // Refers to the distance between middle and ring finger tips
     [SerializeField]
@@ -47,6 +53,9 @@ public class VulcanTeleport : MonoBehaviour
     // Refers to the distance between side finger tips.
     [SerializeField]
     private float maxAverageDistanceToTrigger;
+
+    [SerializeField]
+    private float thumbToPalmThreshold;
 
     //[SerializeField]
     //private float fingerToPalmDistanceForFist;
@@ -61,16 +70,21 @@ public class VulcanTeleport : MonoBehaviour
     [SerializeField]
     private Transform circleTransform;
     [SerializeField]
+    private Transform galaxyTransform;
+    [SerializeField]
     private Transform leapRigTransform;
     [SerializeField]
     private Light orbLight;
     [SerializeField]
     private LineRenderer line;
     [SerializeField]
+    private ParticleSystem startWave;
+    [SerializeField]
     private LayerMask floorLayer;
 
     private Vector3 originalOrbScale;
     private Vector3 originalCircleScale;
+    private Vector3 originalGalaxyScale;
     private Vector3 circleBufferY = new Vector3(0, .001f, 0);
     private float originalLightIntensity;
     private bool currentlyTeleporting;
@@ -81,12 +95,13 @@ public class VulcanTeleport : MonoBehaviour
         originalOrbScale = orbTransform.localScale;
         originalCircleScale = circleTransform.localScale;
         originalLightIntensity = orbLight.intensity;
+        originalGalaxyScale = galaxyTransform.localScale;
         camTransform = Camera.main.transform;
     }
 
     private void Update()
     {
-        if (!currentlyTeleporting && CurrentlySaluting())
+        if (!currentlyTeleporting && CurrentlySaluting() && !ThumbIsCloseToPalm())
         {
             StartCoroutine(Teleport());
         }
@@ -101,6 +116,7 @@ public class VulcanTeleport : MonoBehaviour
 
         orbTransform.gameObject.SetActive(true);
         orbTransform.localScale = Vector3.zero;
+        galaxyTransform.localScale = originalGalaxyScale;
 
         circleTransform.gameObject.SetActive(true);
         circleTransform.localScale = Vector3.zero;
@@ -108,16 +124,16 @@ public class VulcanTeleport : MonoBehaviour
         orbLight.intensity = 0;
 
         DOTween.Kill(orbTransform);
-        orbTransform.DOScale(originalOrbScale, orbEnteranceDur).SetEase(orbScaleEase);
+        orbTransform.DOScale(originalOrbScale, orbEntranceDur).SetEase(orbScaleEase);
 
         DOTween.Kill(circleTransform);
-        circleTransform.DOScale(originalCircleScale, circleEnteranceDur).SetEase(circleScaleEase).SetDelay(circleEnteranceDelay);
+        circleTransform.DOScale(originalCircleScale, circleEnteranceDur).SetEase(circleScaleEase).SetDelay(circleEntranceDelay);
 
         DOTween.Kill(orbLight);
-        orbLight.DOIntensity(originalLightIntensity, orbEnteranceDur).SetEase(orbScaleEase);
+        orbLight.DOIntensity(originalLightIntensity, orbEntranceDur).SetDelay(lightEntranceDelay);
 
         float saluteDuration = 0;
-        while (CurrentlySaluting())
+        while (CurrentlySaluting() && !ThumbIsCloseToPalm())
         {
             yield return null;
             saluteDuration += Time.deltaTime;
@@ -126,24 +142,63 @@ public class VulcanTeleport : MonoBehaviour
 
         line.positionCount = 0;
 
-        DOTween.Kill(orbTransform);
-        orbTransform.DOScale(Vector3.zero, orbExitDur);
+        
 
-        DOTween.Kill(orbLight);
-        orbLight.DOIntensity(0, orbExitDur);
-
-        yield return new WaitForSeconds(orbExitDur + waitBeforeTeleport);  // + waitBeforeJudgingFist
+        yield return new WaitForSeconds(waitBeforeTeleport);  // + waitBeforeJudgingFist
         StopCoroutine("UpdateOrbTransformEveryFrame");
-        orbTransform.gameObject.SetActive(false);
-        currentlyTeleporting = false;
 
-        if (saluteDuration > minSaluteDurationToTeleport && leftHand.isTracked && !CurrentlySaluting()) // && CurrentlyFist()
+        if (saluteDuration > minSaluteDurationToTeleport
+            && leftHand.isTracked
+            && CurrentlySaluting()
+            && ThumbIsCloseToPalm()
+            // && CurrentlyFist()
+            )
         {
+            DOTween.Kill(orbTransform);
+            orbTransform.DOScale(originalOrbScale * 10f, orbTravelDur).SetEase(orbTravelEase);
+            orbTransform.DOMove(circleTransform.position, orbTravelDur).SetEase(orbTravelEase);
+
+            DOTween.Kill(galaxyTransform);
+            galaxyTransform.DOScale(Vector3.zero, orbTravelDur / 1.5f);
+
+            StartCoroutine(StartWaveSoon());
+
+            yield return new WaitForSeconds(orbTravelDur + .01f);
+
             MovePlayer();
+
+            DOTween.Kill(orbTransform);
+            orbTransform.DOScale(Vector3.zero, orbExitDur);
+
+            DOTween.Kill(circleTransform);
+            circleTransform.DOScale(Vector3.zero, orbExitDur).OnComplete(DisableCircle);
+
+            DOTween.Kill(orbLight);
+            orbLight.DOIntensity(0, orbExitDur);
+            yield return new WaitForSeconds(orbExitDur);
+        }
+        else
+        {
+            DOTween.Kill(orbTransform);
+            orbTransform.DOScale(Vector3.zero, orbExitDur);
+
+            DOTween.Kill(orbLight);
+            orbLight.DOIntensity(0, orbExitDur);
+
+            DOTween.Kill(circleTransform);
+            circleTransform.DOScale(Vector3.zero, orbExitDur).OnComplete(DisableCircle);
+
+            yield return new WaitForSeconds(orbExitDur);
         }
 
-        circleTransform.DOScale(Vector3.zero, orbExitDur).OnComplete(DisableCircle);
+        orbTransform.gameObject.SetActive(false);
+        currentlyTeleporting = false;
+    }
 
+    IEnumerator StartWaveSoon()
+    {
+        yield return new WaitForSeconds(orbTravelDur - .1f);
+        startWave.Play();
     }
 
     private void DisableCircle()
@@ -208,6 +263,15 @@ public class VulcanTeleport : MonoBehaviour
         return false;
     }
 
+    private bool ThumbIsCloseToPalm()
+    {
+        if (DistanceToPalm(leftHand.thumbTip) < thumbToPalmThreshold)
+        {
+            return true;
+        }
+        return false;
+    }
+
     private float DistanceToPalm(AttachmentPointBehaviour handPoint)
     {
         return Vector3.Distance(handPoint.transform.position, leftHand.palm.transform.position);
@@ -226,7 +290,7 @@ public class VulcanTeleport : MonoBehaviour
         dist2 = Vector3.Distance(leftHand.middleTip.transform.position, leftHand.indexTip.transform.position);
 
         // Weighted average, which cares more about the fingers that usually track more consistently
-        return Mathf.Lerp(dist1, dist2, .75f); 
+        return Mathf.Lerp(dist1, dist2, .65f); 
     }
 
     private void UpdateOrbTransform()
