@@ -8009,33 +8009,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1619eae651748459329c2863819a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teleportationHand: {fileID: 1989654937}
+  floorLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  middleTipRingTipDistanceThreshold: 0.041
+  sideFingerTipDistanceThreshold: 0.031
+  thumbToPalmThreshold: 0.07
   minSaluteDurationToTeleport: 0.25
-  waitBeforeTeleport: 0
   waitBeforeOrbSpawn: 0.489
   orbEntranceDur: 2
   orbExitDur: 0.25
   orbTravelDur: 0.5
   orbScaleEase: 24
+  orbTravelEase: 15
   circleEntranceDelay: 0
-  lightEntranceDelay: 0.5
   circleEnteranceDur: 1.1
   circleExitDur: 0.5
   circleScaleEase: 12
-  orbTravelEase: 15
-  minDistanceToTrigger: 0.041
-  maxAverageDistanceToTrigger: 0.031
-  thumbToPalmThreshold: 0.07
-  leftHand: {fileID: 1989654937}
+  lightEntranceDelay: 0.5
+  lightEntranceDur: 1.5
+  leapRigTransform: {fileID: 1419305199}
   orbTransform: {fileID: 1549944659239542458}
   circleTransform: {fileID: 344827692}
   galaxyTransform: {fileID: 1557222194492879144}
-  leapRigTransform: {fileID: 1419305199}
   orbLight: {fileID: 1445661143457571466}
   line: {fileID: 408399098}
-  startWave: {fileID: 1680863928846206760}
-  floorLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  pulseWave: {fileID: 1680863928846206760}
 --- !u!1 &1421491548
 GameObject:
   m_ObjectHideFlags: 0
@@ -13795,7 +13795,7 @@ GameObject:
   - component: {fileID: 1680863928846206760}
   - component: {fileID: 1680152237384497216}
   m_Layer: 0
-  m_Name: StartWave
+  m_Name: Pulse Wave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -7,11 +7,6 @@ public class Spring2 : MonoBehaviour
     public Transform baseTransform;
     public Transform lookAtTransform;
 
-    private void Start()
-    {
-        
-    }
-
     private void LateUpdate()
     {
         transform.position = baseTransform.position;
