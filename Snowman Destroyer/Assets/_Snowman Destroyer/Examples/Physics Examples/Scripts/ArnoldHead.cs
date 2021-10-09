@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArnoldHead : MonoBehaviour
+namespace NateVR
 {
-    public Transform lookAt;
-
-    void LateUpdate()
+    public class ArnoldHead : MonoBehaviour
     {
-        transform.LookAt(lookAt);
+        public Transform lookAt;
+
+        void LateUpdate()
+        {
+            transform.LookAt(lookAt);
+        }
     }
 }

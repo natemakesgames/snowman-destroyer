@@ -1,16 +1,19 @@
-﻿                   using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spring2 : MonoBehaviour
+namespace NateVR
 {
-    public Transform baseTransform;
-    public Transform lookAtTransform;
-
-    private void LateUpdate()
+    public class Spring2 : MonoBehaviour
     {
-        transform.position = baseTransform.position;
-        transform.LookAt(lookAtTransform, Vector3.forward);
-        transform.localScale = new Vector3(1f, 1f, Vector3.Distance(transform.position, lookAtTransform.position));
+        public Transform baseTransform;
+        public Transform lookAtTransform;
+
+        private void LateUpdate()
+        {
+            transform.position = baseTransform.position;
+            transform.LookAt(lookAtTransform, Vector3.forward);
+            transform.localScale = new Vector3(1f, 1f, Vector3.Distance(transform.position, lookAtTransform.position));
+        }
     }
 }

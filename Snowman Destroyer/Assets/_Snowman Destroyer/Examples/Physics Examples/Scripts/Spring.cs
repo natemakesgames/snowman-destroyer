@@ -1,12 +1,4 @@
-﻿/*--------------------------------------
-	Nate Danziger Proprietary
-
-	© 2021
-
-	Not licensed for 3rd party use
----------------------------------------*/
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
