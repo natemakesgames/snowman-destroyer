@@ -4,18 +4,16 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Ghost Hand
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: CrystalBallBase
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHATEST_ON _USELIGHTING_ON
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2450
-  stringTagMap:
-    RenderType: TransparentCutout
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -41,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e911cba1eec0c364681095f165f68321, type: 3}
+        m_Texture: {fileID: 2800000, guid: 17e5babce82dfbd4ca13deaf015e7cd8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -58,31 +56,21 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _Cutoff: 0.238
+    - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FresnelIntensity: 1
-    - _FresnelPower: 0.177
-    - _GlossMapScale: 1
-    - _Glossiness: 0.279
+    - _GlossMapScale: 0.746
+    - _Glossiness: 0.8
     - _GlossyReflections: 1
-    - _LightIntensity: 1
-    - _Metallic: 0.064
-    - _Mode: 1
+    - _Metallic: 0.04
+    - _Mode: 0
     - _OcclusionStrength: 1
-    - _Outline: 0.0017
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _useFresnel: 0
-    - _useLighting: 1
-    - _useOutline: 0
     m_Colors:
-    - _Color: {r: 0.6698113, g: 0.6508544, b: 0.6614703, a: 1}
-    - _EmissionColor: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
-    - _FresnelColor: {r: 0.9622642, g: 0.83517265, b: 0.88566107, a: 1}
-    - _MainColor: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
-    - _OutlineColor: {r: 0.9811321, g: 0.69419724, b: 0.80855185, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
