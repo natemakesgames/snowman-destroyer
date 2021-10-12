@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Snowman Destroyer/Examples/Physics Examples/Physics Examples.unity
+    guid: d2ff2a35348da9646812bdcf1b2a2878
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 62f507fef7f7f6d42840cdd3a6a7925a,
       type: 2}
